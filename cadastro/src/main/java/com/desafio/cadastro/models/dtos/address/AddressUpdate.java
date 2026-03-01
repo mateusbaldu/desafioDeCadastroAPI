@@ -1,9 +1,11 @@
 package com.desafio.cadastro.models.dtos.address;
 
 public record AddressUpdate (
+        Integer id,
         Integer petId,
+        String city,
         String street,
-        int number,
+        String number,
         String complement,
         String district
 ){

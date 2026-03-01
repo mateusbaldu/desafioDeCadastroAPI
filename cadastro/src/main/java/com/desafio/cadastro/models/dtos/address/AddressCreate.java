@@ -1,8 +1,10 @@
 package com.desafio.cadastro.models.dtos.address;
 
 public record AddressCreate (
+        Integer petId,
+        String city,
         String street,
-        int number,
+        String number,
         String complement,
         String district
 ){

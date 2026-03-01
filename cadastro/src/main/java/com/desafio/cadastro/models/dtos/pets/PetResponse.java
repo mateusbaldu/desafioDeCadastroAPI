@@ -2,16 +2,16 @@ package com.desafio.cadastro.models.dtos.pets;
 
 import com.desafio.cadastro.enums.PetSex;
 import com.desafio.cadastro.enums.PetType;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import com.desafio.cadastro.models.dtos.address.AddressResponse;
 
-public record PetResponse (
+public record PetResponse(
         Integer id,
         String name,
         PetType petType,
         PetSex petSex,
-        String age,
-        String weight,
-        String race
-){
+        float age,
+        float weight,
+        String race,
+        AddressResponse address
+) {
 }

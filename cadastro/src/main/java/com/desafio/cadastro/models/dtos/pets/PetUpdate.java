@@ -1,17 +1,15 @@
 package com.desafio.cadastro.models.dtos.pets;
 
-import com.desafio.cadastro.enums.PetSex;
-import com.desafio.cadastro.enums.PetType;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import com.desafio.cadastro.models.dtos.address.AddressCreate;
+import com.desafio.cadastro.validation.ValidPetAge;
+import com.desafio.cadastro.validation.ValidPetWeight;
 
-public record PetUpdate (
-        @NotNull @NotBlank
+public record PetUpdate(
+        Integer id,
         String name,
-        PetType petType,
-        PetSex petSex,
-        String age,
-        String weight,
-        String race
-){
+        @ValidPetAge String age,
+        @ValidPetWeight String weight,
+        String race,
+        AddressCreate address
+) {
 }

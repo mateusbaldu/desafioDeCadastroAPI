@@ -21,8 +21,9 @@ public class Address {
     @OneToOne(mappedBy = "address")
     private Pets pet;
 
+    private String city;
     private String street;
-    private int number;
+    private String number;
     private String complement;
     private String district;
 }

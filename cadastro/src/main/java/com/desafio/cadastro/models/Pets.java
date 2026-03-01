@@ -3,8 +3,6 @@ package com.desafio.cadastro.models;
 import com.desafio.cadastro.enums.PetSex;
 import com.desafio.cadastro.enums.PetType;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,16 +20,21 @@ public class Pets {
     @Column(name = "id")
     private Integer id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
     private String name;
-    @NotNull
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type")
     private PetType petType;
-    @NotNull
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "sex")
     private PetSex petSex;
-    private int age;
+
+    private float age;
     private float weight;
     private String race;
 }
