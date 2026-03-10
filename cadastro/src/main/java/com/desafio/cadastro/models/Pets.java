@@ -3,10 +3,7 @@ package com.desafio.cadastro.models;
 import com.desafio.cadastro.enums.PetSex;
 import com.desafio.cadastro.enums.PetType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "pet")
@@ -14,6 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Pets {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
